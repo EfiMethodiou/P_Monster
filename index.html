@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <title>P Monster</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <div class="figure">
+        <div class="head">
+            <div class="horn"></div>
+            <div class="eyebrow">
+                <div class="eyebrow_right"></div>
+                <div class="eyebrow_left"></div>
+            </div>
+            <div class="eyes">
+                <div class="eye">
+                    <div class="ball"></div>
+                </div>
+                <div class="eye">
+                    <div class="ball"></div>
+                </div>
+            </div>
+            <div class="ears">
+                <div class="ear_right"></div>
+                <div class="ear_left"></div>
+            </div>
+            <div class="mouth"></div>
+            <div class="tooth_right"></div>
+            <div class="tooth_left"></div>
+        </div>
+        <!--END OF HEAD-->
+        <div class="arms">
+            <div class="arm_right">
+                <div class="right_cleaner"></div>
+                <!--MAKES THE END OF THE ARM SHARPE SO THE NAILS WILL BE MORE VISIBLE-->
+                <div class="right_nail"></div>
+                <div class="right_nail"></div>
+                <div class="right_nail"></div>
+            </div>
+            <div class="arm_left">
+                <div class="left_cleaner"></div>
+                <div class="left_nail"></div>
+                <div class="left_nail"></div>
+                <div class="left_nail"></div>
+            </div>
+        </div>
+        <div class="hairs">
+            <!--HEAD HAIR-->
+            <div class="head_right1"></div>
+            <div class="head_right2"></div>
+            <div class="head_left1"></div>
+            <div class="head_left2"></div>
+            <!--BODY HAIR-->
+            <div class="right_hair_up"></div>
+            <div class="right_hair_down"></div>
+            <div class="right_hair_down"></div>
+            <div class="left_hair"></div>
+            <div class="left_hair"></div>
+            <div class="left_hair"></div>
+            <div class="left_hair"></div>
+        </div>
+        <div class="pants">
+            <div class="belt">
+                <div class="button"></div>
+                <div class="button"></div>
+                <div class="button"></div>
+            </div>
+        </div>
+        <div class="legs">
+            <div class="leg">
+                <div class="shoe"></div>
+            </div>
+            <div class="leg">
+                <div class="shoe"></div>
+            </div>
+        </div>
+    </div>
+    <!--END OF FIGURE-->
+    <div class="dialog"> HELLO THERE! I AM P.</div>
+
+
+
+    <!--SCRIPT FOR THE EYE MOVEMENT-->
+    <script>
+        var eyeBalls = document.getElementsByClassName("ball");
+        document.onmousemove = function () {
+            var x = event.clientX * 100 / window.innerWidth + "%";
+            var y = event.clientY * 100 / window.innerHeight + "%";
+            /* 
+               clientX === horizontal coordinate of mouse
+               clientY === vertical coordinate of mouse                    
+            */
+            for (var i = 0; i < 2; i++) {
+                eyeBalls[i].style.left = x;
+                eyeBalls[i].style.top = y;
+                eyeBalls[i].style.transform = "translate(-" + x + ",-" + y + ")";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
